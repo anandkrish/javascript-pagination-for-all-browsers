@@ -17,7 +17,8 @@ totalNumberOfPages :  Total number of Pages (Should be calculated for complete d
 spanID             :  The CSS style ID of the span where the page numbers are to be rendered.  
 label              :  Label to be shown before the page numbers like "Showing Pages".(Should be empty string if no label is required).  
 
-If you using jQuery call this method in the ready function. 
+If you using jQuery call this method in the ready function. Works with any version of jQuery.
+
 
 ```html
 <script>
@@ -26,8 +27,21 @@ $(document).ready(function(){
 showPagination(30,'pagination','Showing :');
 });
 </script>
+```
+
 
 In case jQuery is not used. Please call the above function on body onload.
 
+```html
+<script>
 
+function displayPages(){
+//Get the page numbers, span ID and label
+showPagination(30,'pagination','Showing :');
+}
+</script>
+
+<body onload="displayPages();">
+</body>
+```
 
